@@ -46,7 +46,37 @@ int main()
   cin >> t;
   while (t--)
   {
-    
+    int n , k;
+    cin >> n >> k;
+    string s;
+    cin >> s;
+    vi cnt(26, 0);
+    for (char ch : s){
+      cnt[ch - 'a']++;
+    }
+    for(int i = 0; i < 26; i++){
+      char ch = 'a' + i;
+      int count = cnt[i];
+      if(count > 0){
+        deb(ch);
+        deb(count);
+      }
+    }
+    int cntPairs = 0, cntOdd = 0;
+    for(int c : cnt){
+      cntPairs += c / 2;
+      deb(cntPairs);
+      cntOdd += c % 2;
+      deb(cntOdd);
+    }
+    int ans = 2 * (cntPairs / k);
+    deb(ans);
+    cntOdd += 2 * (cntPairs % k);
+    deb(cntOdd);
+    if (cntOdd >= k) {
+      ans++;
+    }
+    cout << ans << endl;
   }
   return 0;
 }
