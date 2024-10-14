@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define gc getchar_unlocked
-#define fo(i, n) for (i = 0; i < n; i++)
+#define fo(i, n) for (int i = 0; i < n; i++)
 #define Fo(i, k, n) for (i = k; k < n ? i < n : i > n; k < n ? i += 1 : i -= 1)
 #define ll long long
 #define deb(x) cout << #x << "=" << x << endl
@@ -23,30 +23,30 @@ typedef vector<pii> vpii;
 typedef vector<pl> vpl;
 typedef vector<vi> vvi;
 typedef vector<vl> vvl;
-ll gcd(ll a, ll b)
-{
-  while (b != 0)
-  {
-    ll temp = b;
-    b = a % b;
-    a = temp;
-  }
-  return a;
-}
 int main()
 {
 #ifndef ONLINE_JUDGE
-  freopen("input.txt", "r", stdin);
-  freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
 #endif
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-  cout.tie(0);
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    
-  }
-  return 0;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n , r; cin >>n >> r;
+        int rem  = 0;
+        int ans = 0;
+        fo(i,n){
+            int x ; cin >> x;
+            r -= x/ 2;
+            ans+= (x/2) + 2;
+            rem += (x % 2);
+        }
+        cout << ans + min(rem, 2 *r - rem) << endl;
+         
+    }
+    return 0;
 }
