@@ -1,0 +1,11 @@
+mark[i]=1
+mark[i]=1
+mark[i]=1
+mark[i]=1
+mark[i]=1
+vis[i]=0
+vis[i]=0
+vis[i]=0
+vis[i]=0
+vis[i]=0
+0
